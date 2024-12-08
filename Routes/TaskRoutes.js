@@ -8,17 +8,20 @@ const taskSchema = Joi.object({
     id: Joi.string().default(`${Date.now()}`),
     title: Joi.string().required(),
     description: Joi.string().required(),
-    status: Joi.string(),
+    status: Joi.string().default("TODO"),
     priority: Joi.string(),
     dueDate: Joi.date().required(),
     createdAt: Joi.date(),
     updatedAt: Joi.date().default(Date.now())
 })
 
+
 router.get('/tasks', async (req, res) => {
+    const limit = parseInt(req.query.limit) || 10;
+const skip = parseInt(req.query.skip) || 0;
     try {
-        const task = await tasks.find({})
-        res.status(200).json({ task })
+       const task =  await tasks.find().skip(skip).limit(limit)
+       res.json({task})
     } catch (e) {
         res.status(500).json({ msg: "Internal server error", e })
     }
