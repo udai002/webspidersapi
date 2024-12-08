@@ -1,7 +1,16 @@
 
 # Webspiders api
 
-Here are the api's created using Express JS for perform task crud operations.
+### Install packages 
+To install all package run the command
+```
+npm install
+```
+### Run server
+to run the server run the below command 
+```
+node index.js
+```
 
 ## API Reference
 
