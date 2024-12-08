@@ -53,6 +53,7 @@ This is a tasks api to get all tasks
 ```
 
 #### create tasks
+Endpoint to creat task
 
 ```http
   POST /api/tasks/
@@ -73,7 +74,7 @@ This is a tasks api to get all tasks
 
 
 #### Edit Task
-
+Endpoint to edit and modify the task
 ```http
   PUT /api/tasks/${id}
 ```
@@ -100,7 +101,22 @@ This is a tasks api to get all tasks
     }
 
 ```
+#### retriev task based on id 
+Endpoint through which we can retrive the task based on given id 
+
+```http
+  GET /api/tasks/${id}
+```
+### Request 
+
+| parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `string` | **Unique** |
+
+
+
 #### delete Task 
+Endpoint through which we can delete the task based on given id 
 
 ```http
   DELETE /api/tasks/${id}
@@ -110,4 +126,3 @@ This is a tasks api to get all tasks
 | parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `id` | `string` | **Unique** |
-
